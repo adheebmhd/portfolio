@@ -78,7 +78,7 @@ export default function Projects() {
     </a>
 
     <a
-      href="https://github.com/adheebmhd"
+      href="https://github.com/adheebmhd/portfolio"
       target="_blank"
       rel="noopener noreferrer"
       className="rounded-full border border-white/20 px-6 py-3 font-semibold text-white transition duration-300 hover:-translate-y-1 hover:border-cyan-400 hover:text-cyan-400"

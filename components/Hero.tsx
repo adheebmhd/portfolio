@@ -42,7 +42,7 @@ export default function Hero() {
             </a>
 
             <a
-              href="/resume.pdf"
+              href="/resume/Adheeb_CV.pdf"
               download
               className="rounded-full border border-white/20 px-7 py-3 font-semibold text-white transition duration-300 hover:-translate-y-1 hover:border-cyan-400 hover:text-cyan-400"
             >
