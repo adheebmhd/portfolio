@@ -1,25 +1,35 @@
 "use client";
-import { FiExternalLink, FiGithub } from "react-icons/fi";
+
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { FiExternalLink, FiGithub } from "react-icons/fi";
+
+const technologies = [
+  "React",
+  "Node.js",
+  "Express",
+  "MySQL",
+  "Tailwind CSS",
+  "Vercel",
+  "Render",
+];
 
 export default function Projects() {
   return (
     <section
       id="projects"
-      className="bg-slate-900 py-24 px-6 text-white scroll-mt-24"
+      className="scroll-mt-24 bg-slate-900 px-6 py-24 text-white"
     >
-       <motion.div
+      <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.7, ease: "easeOut" }}
+        className="mx-auto max-w-7xl"
       >
-      <div className="mx-auto max-w-7xl">
-
         {/* Heading */}
-        <div className="text-center mb-16">
-          <p className="uppercase tracking-[4px] text-cyan-400 font-semibold">
+        <div className="mb-16 text-center">
+          <p className="font-semibold uppercase tracking-[4px] text-cyan-400">
             Featured Project
           </p>
 
@@ -27,70 +37,89 @@ export default function Projects() {
             POS Billing System
           </h2>
 
-          <p className="mx-auto mt-5 max-w-3xl text-slate-400 leading-8">
-            A modern Full Stack Point of Sale (POS) system developed for retail
+          <p className="mx-auto mt-5 max-w-3xl leading-8 text-slate-400">
+            A modern full-stack Point of Sale system developed for retail
             businesses with billing, inventory management, payment tracking,
-            reporting and receipt printing.
+            reporting, draft bills, and receipt printing.
           </p>
         </div>
 
-        {/* Main Layout */}
-        <div className="grid gap-14 lg:grid-cols-2 items-center">
-
-          {/* LEFT */}
-
+        {/* Main layout */}
+        <div className="grid items-center gap-14 lg:grid-cols-2">
+          {/* Left side */}
           <div>
+            <div className="overflow-hidden rounded-3xl border border-cyan-500/20 bg-slate-950/40 shadow-2xl shadow-cyan-500/10">
+              <div className="overflow-hidden">
+                <Image
+                  src="/images/projects/pos-billing.png"
+                  alt="POS Billing System dashboard"
+                  width={1200}
+                  height={750}
+                  className="h-auto w-full transition-transform duration-500 hover:scale-105"
+                />
+              </div>
 
-            {/* Screenshot Placeholder */}
-
-           <div className="overflow-hidden rounded-3xl border border-cyan-500/20 shadow-2xl shadow-cyan-500/10">
-  <img
-    src="/images/projects/pos-billing.png"
-    alt="POS Billing"
-    className="w-full transition-transform duration-500 hover:scale-105"
-  />
-</div>
-
+              {/* Tech stack badges */}
+              <div className="flex flex-wrap gap-2 p-5">
+                {technologies.map((tech) => (
+                  <span
+                    key={tech}
+                    className="rounded-full border border-cyan-500/30 bg-cyan-500/10 px-3 py-1 text-sm text-cyan-400"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
           </div>
 
-          {/* RIGHT */}
-
+          {/* Right side */}
           <div>
-  <h3 className="text-3xl font-bold">
-    Complete Retail Billing Solution
-  </h3>
+            <h3 className="text-3xl font-bold">
+              Complete Retail Billing Solution
+            </h3>
 
-  <p className="mt-6 leading-8 text-slate-400">
-    Designed and developed a complete POS application using React,
-    Node.js, Express and MySQL. The system helps retail businesses
-    manage billing, stock, payments and reports efficiently.
-  </p>
+            <p className="mt-6 leading-8 text-slate-400">
+              Designed and developed a complete POS application using React,
+              Node.js, Express, and MySQL. The system helps retail businesses
+              manage billing, stock, customer payments, pending balances,
+              reports, and receipt printing efficiently.
+            </p>
 
-  <div className="mt-8 flex flex-wrap gap-4">
-    <a
-      href="https://pos-system-hazel-seven.vercel.app"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="rounded-full bg-cyan-400 px-6 py-3 font-semibold text-slate-950 transition duration-300 hover:-translate-y-1 hover:bg-cyan-300"
-    > 
-      <FiExternalLink size={18} />
-      Live Demo
-    </a>
+            {/* Features */}
+            <div className="mt-7 grid gap-3 text-slate-300 sm:grid-cols-2">
+              <p>✓ Stock management</p>
+              <p>✓ Billing and receipts</p>
+              <p>✓ Payment tracking</p>
+              <p>✓ Draft bill management</p>
+              <p>✓ Sales reports</p>
+              <p>✓ Cloud database</p>
+            </div>
 
-    <a
-      href="https://github.com/adheebmhd/portfolio"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="rounded-full border border-white/20 px-6 py-3 font-semibold text-white transition duration-300 hover:-translate-y-1 hover:border-cyan-400 hover:text-cyan-400"
-    >
-      <FiGithub size={18} />
-      View Code
-    </a>
-  </div>
-</div> 
-</div>
+            {/* Buttons */}
+            <div className="mt-8 flex flex-wrap gap-4">
+              <a
+                href="https://pos-system-hazel-seven.vercel.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full bg-cyan-400 px-6 py-3 font-semibold text-slate-950 transition duration-300 hover:-translate-y-1 hover:bg-cyan-300"
+              >
+                <FiExternalLink size={18} />
+                Live Demo
+              </a>
 
-      </div>
+              <a
+                href="https://github.com/adheebmhd/PosSystem"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full border border-white/20 px-6 py-3 font-semibold text-white transition duration-300 hover:-translate-y-1 hover:border-cyan-400 hover:text-cyan-400"
+              >
+                <FiGithub size={18} />
+                View Code
+              </a>
+            </div>
+          </div>
+        </div>
       </motion.div>
     </section>
   );
