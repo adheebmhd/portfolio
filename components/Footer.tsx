@@ -1,3 +1,4 @@
+import { FiGithub, FiMail } from "react-icons/fi";
 export default function Footer() {
   const year = new Date().getFullYear();
 
@@ -39,16 +40,35 @@ export default function Footer() {
 
         {/* Right */}
         <div className="text-center md:text-right">
-          <p className="text-sm text-slate-400">
-            © {year} Adheeb
-          </p>
 
-          <p className="mt-2 text-xs text-slate-500">
-            Designed & Built with ❤️ using Next.js
-          </p>
-        </div>
+  <div className="flex justify-center gap-4 md:justify-end">
+    <a
+      href="https://github.com/adheebmhd"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="rounded-full border border-slate-700 p-2 text-slate-400 transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400 hover:text-cyan-400"
+    >
+      <FiGithub className="h-5 w-5" />
+    </a>
 
-      </div>
+    <a
+      href="mailto:adheebmhd7@gmail.com"
+      className="rounded-full border border-slate-700 p-2 text-slate-400 transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400 hover:text-cyan-400"
+    >
+      <FiMail className="h-5 w-5" />
+    </a>
+  </div>
+
+  <p className="mt-5 text-sm text-slate-400">
+    © {year} Adheeb
+  </p>
+
+  <p className="mt-2 text-xs text-slate-500">
+    Designed & Built with ❤️ using Next.js, Tailwind CSS & TypeScript
+  </p>
+
+</div>
+</div>
     </footer>
   );
 }

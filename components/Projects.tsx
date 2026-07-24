@@ -1,17 +1,25 @@
 "use client";
-
+import {
+  SiReact,
+  SiNodedotjs,
+  SiExpress,
+  SiMysql,
+  SiTailwindcss,
+  SiVercel,
+  SiRender,
+} from "react-icons/si";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { FiExternalLink, FiGithub } from "react-icons/fi";
 
 const technologies = [
-  "React",
-  "Node.js",
-  "Express",
-  "MySQL",
-  "Tailwind CSS",
-  "Vercel",
-  "Render",
+  { name: "React", icon: SiReact },
+  { name: "Node.js", icon: SiNodedotjs },
+  { name: "Express", icon: SiExpress },
+  { name: "MySQL", icon: SiMysql },
+  { name: "Tailwind CSS", icon: SiTailwindcss },
+  { name: "Vercel", icon: SiVercel },
+  { name: "Render", icon: SiRender },
 ];
 
 export default function Projects() {
@@ -60,16 +68,17 @@ export default function Projects() {
               </div>
 
               {/* Tech stack badges */}
-              <div className="flex flex-wrap gap-2 p-5">
-                {technologies.map((tech) => (
-                  <span
-                    key={tech}
-                    className="rounded-full border border-cyan-500/30 bg-cyan-500/10 px-3 py-1 text-sm text-cyan-400"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
+             <div className="flex flex-wrap gap-4 p-5">
+  {technologies.map(({ name, icon: Icon }) => (
+    <span
+      key={name}
+      className="inline-flex items-center gap-2 rounded-full border border-cyan-500/30 bg-cyan-500/10 px-4 py-2 text-sm text-cyan-400 transition-all duration-300 hover:-translate-y-1 hover:bg-cyan-500/20 hover:border-cyan-400"
+    >
+      <Icon className="h-4 w-4" />
+      {name}
+    </span>
+  ))}
+</div>
             </div>
           </div>
 

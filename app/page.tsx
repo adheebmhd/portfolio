@@ -7,6 +7,7 @@ import Experience from "@/components/Experience";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import Reveal from "@/components/Reveal";
+import ScrollToTop from "@/components/ScrollToTop";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
       <Experience />
       <Contact />
       <Footer />
+      <ScrollToTop />
     </main>
   );
 }
