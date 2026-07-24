@@ -1,4 +1,13 @@
 @import "tailwindcss";
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  margin: 0;
+  background: #020617;
+}
 
 :root {
   --background: #ffffff;
